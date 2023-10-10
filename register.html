@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    let add_friend = confirm('Add Friend?');
+
+    while (add_friend == true) {
+        let fname = prompt('Please enter your first name')
+        let lname = prompt('Please enter your last name')
+        let age = prompt('Please enter your age')
+
+        
+
+        let user_data = {
+            fname : fname +" "+ lname,
+            age : age,
+        }
+        console.log('New User!' , user_data)
+
+        let goNext = confirm('Add Another Friend?');
+
+        if (goNext == false) {
+            add_friend = false;
+        }
+    }
+</script>
+</html>

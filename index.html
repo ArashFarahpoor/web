@@ -32,13 +32,17 @@
 
     }
     let confirm_user = confirm('are you online?')
-    let username = prompt('enter your name')
+    let username_x = prompt('enter your name')
 
-    values.username = username
+    values.username = username_x
+
     if (confirm_user) {
         values.isOnline = true;
     }
 
+
+
+    
     document.getElementById('username').innerHTML = values.username
 
     if (values.isOnline == true) {
@@ -48,6 +52,23 @@
         document.getElementById('status').innerHTML = 'Offline'
 
     }
+
+
+
+
+
+
+    
+    for (let i = 0; i < 5; i++) {
+        alert('Meow Meow ' + i);
+    }
+
+    let j = 0
+    while (j < 10) {
+        console.log('Meow ' + j);
+        j++;
+    }
+
 
 </script>
 

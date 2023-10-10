@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+</head>
+
+<body>
+    <h2 id="username">
+
+    </h2>
+    <p id="status"></p>
+
+
+</body>
+<script>
+    let xyz = {
+        x: {
+            z: {
+                a: 'Meow'
+            }
+        },
+        y: 'Abbas',
+    }
+    console.log(xyz.x.z.a);
+    let values = {
+        username: 'abc',
+        isOnline: false,
+
+    }
+    let confirm_user = confirm('are you online?')
+    let username = prompt('enter your name')
+
+    values.username = username
+    if (confirm_user) {
+        values.isOnline = true;
+    }
+
+    document.getElementById('username').innerHTML = values.username
+
+    if (values.isOnline == true) {
+        document.getElementById('status').innerHTML = 'Online'
+
+    } else {
+        document.getElementById('status').innerHTML = 'Offline'
+
+    }
+
+</script>
+
+</html>

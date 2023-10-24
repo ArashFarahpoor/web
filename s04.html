@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+    <style>
+        .c1{
+            background-color: yellow;
+        }
+        .c2{
+            background-color: green;
+        }
+        
+         .c3{
+            background-color: pink;
+         }    
+         section{
+            background-color: lightblue;
+            display: flex;
+         }
+         article{
+            background-color: blanchedalmond;
+            margin: 10px;
+            padding: 10px;
+            width: 50px;
+            height: 50px;
+         }
+    </style>
+</head>
+
+<body>
+<header class="c1">آرش فرح پور </header>    
+<section>موتولد 1383/4/20</section>
+<section class="c3">دانشجو  دانشگاه شهید منتظری </section>
+
+<section>
+    <article id="c1">
+        <input id="btn1" type="button" value="ok">
+        <input id="tx1" type="text" value="">
+    </article>
+</section>
+<script>
+    document.getElementById("btn1").addEventListener('click', function(){
+        document.getElementById("c1").style.backgroundColor=
+         document.getElementById("tx1").value
+    })
+</script>
+</body>
+</html>

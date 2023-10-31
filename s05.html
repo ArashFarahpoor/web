@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>S05</title>
+</head>
+
+<body>
+    <style>
+        * {
+            font-family: sans-serif;
+            font-size: 23px;
+        }
+
+        .field {
+            display: flex;
+            align-items: center;
+            margin: 10px;
+
+        }
+
+        .field input {
+            width: 100px;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+
+        .field button {
+
+            font-size: 14px;
+        }
+    </style>
+
+
+    <section>
+        <button id="add-user">ADD</button>
+        <div id="user-list">
+
+        </div>
+        <button id="cancel-btn">SAVE</button>
+    </section>
+
+
+    <script>
+       
+
+        let userList = document.getElementById("user-list");
+        let addUserBtn = document.getElementById("add-user");
+        let users = [];
+
+        function userAdd() {
+
+            userTemp = `
+    <div class="field">
+        <input type="text" placeholder="firstName" id="f-name">
+        <input type="text" placeholder="lastName" id="l-name">
+        <button onclick="userAddToArr()" id="btn">ADD</button>
+    </div>
+`
+                userList.innerHTML += userTemp;
+        }
+
+        function userAddToArr(){
+            let fname = document.getElementById("f-name");
+            let lname = document.getElementById("l-name");
+            let user = {
+                fname:fname.value,
+                lname:lname.value,
+            }
+
+            users.push(user);
+
+            console.log(users);
+        }
+
+        addUserBtn.addEventListener("click",userAdd)
+
+
+
+
+       
+    </script>
+</body>
+
+</html>

@@ -166,10 +166,22 @@ function inserttofile(request,response,data){
     }
     else{
         write(response, data, extention); 
+        fileData=JSON.parse(fileData)
+        fileData.data.push(JSON.parse(data))
+        fileData=JSON.stringify(fileData)
+        fs.writeFile("massage.txt",fileData,"utf8",function(error){
+            if(error){
+                write(response, 'fs error', 'text');
+            }
+            else{
+                write(response, "data saved", "txt"); }
+        })
     }
     console.log("saved")
 })
 }
+
+
 let routes = {
     x: funcx,
     y: funcy,
@@ -181,7 +193,8 @@ let routes = {
     page2c: page2controllerC,
     page2d: page2controllerD,
     flie: fileControllerB,
-    inserttofile:inserttofile
+    inserttofile:inserttofile,
+    // getfile:getfile
 }
 
 function requestHandler(request, response) {

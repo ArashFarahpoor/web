@@ -263,7 +263,37 @@ function signupController(request, response, data){
 }
 
 function loginController(request, response, data){
+    data = JSON.parse(data);
 
+    if(data.user === undefined 
+        || data.pass === undefined
+        ){
+            write(response, 'BAD DATA.', 'text');
+    }
+    else{
+        fs.readFile('database.txt', function (error, fileData) {
+            if(error){
+                write(response, 'FILE NOT FOUND.', 'text');
+            }
+            else{
+    
+                fileData = JSON.parse(fileData);
+                let found   = false ;
+                for(i=0;i<fileData.data.length; i++){
+                    if(fileData.data[1].user === Date.user){
+                        found =true; 
+                        write(response,"user found !!!","text")
+
+                    }
+                } 
+               if(found === false){
+                write(response,"user not found !!!","text")
+
+               }
+        
+            }
+        });
+    } 
 }
 
 let routes = {
